@@ -12,7 +12,7 @@ export default function Cart() {
   const [token] = state.token
 
   const initialOptions = {
-    clientId: "ASpq0AlNQcVsT-UNzSB5mNWPCBBNQj-127kAtAy1b-cYE5y6kXGQoH6Uu9IpcsJsOJiqAUK-uUyv-Jbp",
+    clientId: "test",
     currency: "USD",
     components: "buttons"
   }
