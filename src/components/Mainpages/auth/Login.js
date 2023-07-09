@@ -37,7 +37,7 @@ export default function Login() {
       //    email: amarius@amariusjones.com
       //    password: 12345678 
       // }
-      await axios.post('https://still-dawn-57401-b5963556d2d4.herokuapp.com/user/login', {...user})
+      await axios.post('https://www.everythingiswater.com//user/login', {...user})
 
       // localStorage is a property of the window that allows you to
       // access a storage object for the document's origin; the stored

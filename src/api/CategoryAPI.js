@@ -10,7 +10,7 @@ export default function CategoryAPI() {
 
         const getCategories = async () => {
 
-            const res = await axios.get('https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/category')
+            const res = await axios.get('https://www.everythingiswater.com/.com/api/category')
             setCategories(res.data)
 
         }

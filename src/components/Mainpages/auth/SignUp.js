@@ -34,7 +34,7 @@ export default function SignUp() {
     try {
 
       // Post to the API the new user data
-      await axios.post('https://still-dawn-57401-b5963556d2d4.herokuapp.com/user/register', {...user})
+      await axios.post('https://www.everythingiswater.com//user/register', {...user})
 
       // Log the user has logged in
       localStorage.setItem('firstLogin', true)

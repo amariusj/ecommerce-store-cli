@@ -84,7 +84,7 @@ export default function CreateProduct() {
 
             setLoading(true)
 
-            const res = await axios.post('https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/upload', formData, {
+            const res = await axios.post('https://www.everythingiswater.com//api/upload', formData, {
                 headers: {
                     'content-type': 'multipart/form-data',
                     Authorization: token

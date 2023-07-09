@@ -61,11 +61,11 @@ export default function Products() {
 
       setLoading(true)
 
-      const destroyImg = axios.post('https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/destroy', {public_id}, {
+      const destroyImg = axios.post('https://www.everythingiswater.com/m/api/destroy', {public_id}, {
         headers: {Authorization: token}
       })
 
-      const deleteProduct = axios.delete(`https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/products/${id}`, {
+      const deleteProduct = axios.delete(`https://www.everythingiswater.com/m/api/products/${id}`, {
         headers: {Authorization: token}
       })
 
