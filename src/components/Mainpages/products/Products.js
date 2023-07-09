@@ -90,6 +90,7 @@ export default function Products() {
   }
 
   if (loading) return <div><Loading /></div>
+  if (!products) return <div><Loading /></div>
 
 
   return (
