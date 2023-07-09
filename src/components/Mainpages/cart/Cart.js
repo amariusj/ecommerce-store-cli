@@ -75,7 +75,7 @@ export default function Cart() {
   const addToCart = async (cart) => {
     try {
 
-      await axios.patch('/user/addcart', {cart}, {
+      await axios.patch('https://still-dawn-57401-b5963556d2d4.herokuapp.com/user/addcart', {cart}, {
         headers: {Authorization: token}
       })
 
@@ -95,7 +95,7 @@ export default function Cart() {
       const { address } = payment.purchase_units[0].shipping
 
       // Post the payment to the API
-      await axios.post('/api/payment', {cart, paymentId: id, address}, {
+      await axios.post('https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/payment', {cart, paymentId: id, address}, {
         headers: {Authorization: token}
       })
 

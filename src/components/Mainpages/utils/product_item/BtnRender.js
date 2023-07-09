@@ -16,7 +16,7 @@ export default function BtnRender({product, deleteProduct}) {
                         <Link id="btn_buy" to="#!" onClick={() => deleteProduct(product._id, product.images.public_id)} >
                             Delete
                         </Link>
-                        <Link id="btn_view" to={`/edit_product/${product._id}`}>
+                        <Link id="btn_view" to={`https://still-dawn-57401-b5963556d2d4.herokuapp.com/edit_product/${product._id}`}>
                             Edit
                         </Link>
                     </>
@@ -25,7 +25,7 @@ export default function BtnRender({product, deleteProduct}) {
                         <Link id="btn_buy" to="#!" onClick={() => addCart(product)}>
                             Buy
                         </Link>
-                        <Link id="btn_view" to={`/detail/${product._id}`}>
+                        <Link id="btn_view" to={`https://still-dawn-57401-b5963556d2d4.herokuapp.com/detail/${product._id}`}>
                             View
                         </Link>
                     </>

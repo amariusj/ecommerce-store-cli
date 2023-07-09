@@ -36,7 +36,7 @@ export const DataProvider = ({children}) => {
                 try {
         
                 // Grab the refresh token
-                const res = await axios.get('/user/refresh_token')
+                const res = await axios.get('https://still-dawn-57401-b5963556d2d4.herokuapp.com/user/refresh_token')
                         
         
                 // Add the token to the state for the client

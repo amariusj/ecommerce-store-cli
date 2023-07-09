@@ -18,7 +18,7 @@ export default function UserAPI(token) {
 
                 try {
 
-                    const res = await axios.get('/user/infor', {
+                    const res = await axios.get('https://still-dawn-57401-b5963556d2d4.herokuapp.com/user/infor', {
                         headers: {Authorization: token}
                     })
 

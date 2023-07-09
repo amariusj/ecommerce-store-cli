@@ -14,7 +14,7 @@ export default function ProductsAPI() {
     useEffect(() => {
 
         const getProducts = async () => {
-            const res = await axios.get(`/api/products`)
+            const res = await axios.get(`https://still-dawn-57401-b5963556d2d4.herokuapp.com/api/products`)
             setProducts(res.data.products)
             setResult(res.data.result)
         }
