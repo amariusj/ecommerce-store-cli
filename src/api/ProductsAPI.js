@@ -14,7 +14,7 @@ export default function ProductsAPI() {
     useEffect(() => {
 
         const getProducts = async () => {
-            const res = await axios.get(`https://www.everythingiswater.com//api/products`)
+            const res = await axios.get(`https://www.everythingiswater.com/api/products`)
             setProducts(res.data.products)
             setResult(res.data.result)
         }

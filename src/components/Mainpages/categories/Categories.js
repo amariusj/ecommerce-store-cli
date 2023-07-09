@@ -21,14 +21,14 @@ export default function Categories() {
 
             if (onEdit) {
 
-                const res = await axios.put(`https://www.everythingiswater.com//api/category/${id}`, {name: category}, {
+                const res = await axios.put(`https://www.everythingiswater.com/api/category/${id}`, {name: category}, {
                     headers: {Authorization: token}
                 })
                 alert(res.data.msg)
 
             } else {
 
-                const res = await axios.post('https://www.everythingiswater.com//api/category', {name: category}, {
+                const res = await axios.post('https://www.everythingiswater.com/api/category', {name: category}, {
                     headers: {Authorization: token}
                 })
                 alert(res.data.msg)
@@ -65,7 +65,7 @@ export default function Categories() {
 
         try {
 
-            const res = await axios.delete(`https://www.everythingiswater.com//api/category/${id}`, {
+            const res = await axios.delete(`https://www.everythingiswater.com/api/category/${id}`, {
                 headers: {Authorization: token}
             })
 

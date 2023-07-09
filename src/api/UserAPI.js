@@ -18,7 +18,7 @@ export default function UserAPI(token) {
 
                 try {
 
-                    const res = await axios.get('https://www.everythingiswater.com//user/infor', {
+                    const res = await axios.get('https://www.everythingiswater.com/user/infor', {
                         headers: {Authorization: token}
                     })
 
