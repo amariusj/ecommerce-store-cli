@@ -75,7 +75,7 @@ export default function Cart() {
   const addToCart = async (cart) => {
     try {
 
-      await axios.patch('/user/addcart', {cart}, {
+      await axios.patch('https://www.everythingiswater.com/user/addcart', {cart}, {
         headers: {Authorization: token}
       })
 
@@ -95,7 +95,7 @@ export default function Cart() {
       const { address } = payment.purchase_units[0].shipping
 
       // Post the payment to the API
-      await axios.post('/api/payment', {cart, paymentId: id, address}, {
+      await axios.post('https://www.everythingiswater.com/api/payment', {cart, paymentId: id, address}, {
         headers: {Authorization: token}
       })
 

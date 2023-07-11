@@ -10,7 +10,7 @@ export default function CategoryAPI() {
 
         const getCategories = async () => {
 
-            const res = await axios.get('/api/category')
+            const res = await axios.get('https://www.everythingiswater.com/api/category')
             setCategories(res.data)
 
         }

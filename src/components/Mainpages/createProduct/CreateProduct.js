@@ -84,7 +84,7 @@ export default function CreateProduct() {
 
             setLoading(true)
 
-            const res = await axios.post('/api/upload', formData, {
+            const res = await axios.post('https://www.everythingiswater.com/api/upload', formData, {
                 headers: {
                     'content-type': 'multipart/form-data',
                     Authorization: token
@@ -111,7 +111,7 @@ export default function CreateProduct() {
 
             setLoading(true)
 
-            await axios.post('/api/destroy', {public_id: images.public_id}, {
+            await axios.post('https://www.everythingiswater.com/api/destroy', {public_id: images.public_id}, {
                 headers: {Authorization: token}
             })
 
@@ -146,13 +146,13 @@ export default function CreateProduct() {
 
             if (onEdit) {
 
-                await axios.put(`/api/products/${product._id}`, {...product, images}, {
+                await axios.put(`https://www.everythingiswater.com/api/products/${product._id}`, {...product, images}, {
                     headers: {Authorization: token}
                 })
 
             } else {
 
-                await axios.post('/api/products', {...product, images}, {
+                await axios.post('https://www.everythingiswater.com/api/products', {...product, images}, {
                     headers: {Authorization: token}
                 })
 

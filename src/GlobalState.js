@@ -36,7 +36,7 @@ export const DataProvider = ({children}) => {
                 try {
         
                 // Grab the refresh token
-                const res = await axios.get('/user/refresh_token')
+                const res = await axios.get('https://www.everythingiswater.com/user/refresh_token')
                         
         
                 // Add the token to the state for the client
