@@ -61,11 +61,11 @@ export default function Products() {
 
       setLoading(true)
 
-      const destroyImg = axios.post('https://www.everythingiswater.com/api/destroy', {public_id}, {
+      const destroyImg = axios.post('/api/destroy', {public_id}, {
         headers: {Authorization: token}
       })
 
-      const deleteProduct = axios.delete(`https://www.everythingiswater.com/api/products/${id}`, {
+      const deleteProduct = axios.delete(`/api/products/${id}`, {
         headers: {Authorization: token}
       })
 
@@ -90,7 +90,6 @@ export default function Products() {
   }
 
   if (loading) return <div><Loading /></div>
-  if (!products) return <div><Loading /></div>
 
 
   return (

@@ -14,14 +14,14 @@ export default function ProductsAPI() {
     useEffect(() => {
 
         const getProducts = async () => {
-            const res = await axios.get(`https://www.everythingiswater.com/api/products`)
+            const res = await axios.get(`/api/products?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
             setProducts(res.data.products)
             setResult(res.data.result)
         }
     
           getProducts()
     
-      },[callback])
+      },[callback, category, page, search, sort])
 
     return {
         products: [products, setProducts],
