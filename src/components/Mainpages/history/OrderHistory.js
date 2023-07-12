@@ -17,7 +17,7 @@ export default function OrderHistory() {
 
                 if (isAdmin) {
 
-                    const res = await axios.get('https://www.everythingiswater.com/api/payment', {
+                    const res = await axios.get('/api/payment', {
                         headers: {Authorization: token}
                     })
     
@@ -25,7 +25,7 @@ export default function OrderHistory() {
 
                 } else {
 
-                    const res = await axios.get('https://www.everythingiswater.com/user/history', {
+                    const res = await axios.get('/user/history', {
                         headers: {Authorization: token}
                     })
     
