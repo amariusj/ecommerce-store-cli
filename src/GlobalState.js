@@ -48,7 +48,9 @@ export const DataProvider = ({children}) => {
         
                 } catch (err) {
         
-                    if (err) alert(err.response.data.msg)
+                    localStorage.removeItem('firstLogin')
+                    
+                    window.location.href = '/'
         
                 }   
                 
