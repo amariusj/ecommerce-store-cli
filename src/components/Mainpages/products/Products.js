@@ -3,6 +3,8 @@ import { GlobalState } from '../../../GlobalState'
 import ProductItem from '../utils/product_item/ProductItem'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
+import Filters from './Filters'
+import LoadMore from './LoadMore'
 
 export default function Products() {
 
@@ -94,6 +96,7 @@ export default function Products() {
 
   return (
     <>
+    <Filters />
     {
       isAdmin &&
       <div className="delete-all">
@@ -111,7 +114,11 @@ export default function Products() {
         }) 
       }
     </div>
-    {products.length === 0 && <Loading />}
+    <LoadMore />
+    {products.length === 0 && <h1 style={{
+      textAlign: 'center',
+      marginTop: '5rem'
+    }}>No Products Found</h1>}
     </>
   )
 }
