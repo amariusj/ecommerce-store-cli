@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { GlobalState } from '../../../GlobalState'
 import ProductItem from '../utils/product_item/ProductItem'
+import Loading from '../utils/loading/Loading'
 
 const DetailProduct = () => {
 
@@ -32,6 +33,14 @@ const DetailProduct = () => {
         }
     }, [params.id, products])
 
+    // show the loading animation if the image has not loaded yet
+    const [loading, setLoading] = useState(true)
+    const imgStyle = loading ? { display: "none" } : {}
+
+    const handleImageLoad = () => {
+        setLoading(false)
+        }
+
     // ensure that if the detailed product cannot be found with the parameter
     // then the component does not render and an error is shown instead.
     // This helps if someone directs themselves to a page that no longer
@@ -42,19 +51,27 @@ const DetailProduct = () => {
     return(
         <>
             <div className="detail">
-                <img src={detailProduct.images.url} alt="" />
+
+                { loading && <Loading /> }
+                <img src={detailProduct.images.url} style={imgStyle} 
+                onLoad={handleImageLoad} alt="" />
+
                 <div className="box-detail">
+
                     <div className="row">
                         <h2>{detailProduct.title}</h2>
                         <h6>{detailProduct.product_id}</h6>
                     </div>
+
                     <span>$ {detailProduct.price}</span>
                     <p>{detailProduct.description}</p>
                     <p>{detailProduct.content}</p>
                     <p>Sold: {detailProduct.sold}</p>
                     <Link to="/cart" onClick={() => addCart(detailProduct)}
                     className="cart">Buy Now</Link>
+
                 </div>
+
             </div>
 
             <div>
