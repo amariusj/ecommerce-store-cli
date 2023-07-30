@@ -26,8 +26,8 @@ const Pages = () => {
 
             <Route path="/detail/:id" exact element={<DetailProduct />} />
 
-            <Route path="/login" exact Component={isLogged ? NotFound : Login} />
-            <Route path="/signup" exact Component={isLogged ? NotFound : SignUp} />
+            <Route path="/api/login" exact Component={isLogged ? NotFound : Login} />
+            <Route path="/api/signup" exact Component={isLogged ? NotFound : SignUp} />
             <Route path="/cart" exact Component={Cart} />
             <Route path="/history" exact Component={isLogged ? OrderHistory : NotFound} />
             <Route path="/history/:id" exact element={isLogged ? <OrderDetails /> : <NotFound />} />

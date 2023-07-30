@@ -64,8 +64,8 @@ const Header = () => {
                 {
                     isLogged ? loggedRouter() : 
                     <>
-                        <li onClick={() => setMenu(!menu)}><Link to="/login">Login</Link></li>
-                        <li onClick={() => setMenu(!menu)}><Link to="/signup">Sign Up</Link></li>
+                        <li onClick={() => setMenu(!menu)}><Link to="/api/login">Login</Link></li>
+                        <li onClick={() => setMenu(!menu)}><Link to="/api/signup">Sign Up</Link></li>
                     </>
                 }
 
