@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { GlobalState } from '../../../GlobalState'
 
 export default function Login() {
+
+  // Import Context and loginSubmit function from UserAPI
+  const state = useContext(GlobalState)
+  const loginSubmit = state.userAPI.loginSubmit
 
   // Create the state to hold the user information submitted
   // from the form
@@ -24,45 +28,11 @@ export default function Login() {
     setUser({...user, [name]:value})
   }
 
-  // Run this function when hitting the submit button
-  const loginSubmit = async e => {
-
-    // Prevent the page from re-loading
-    e.preventDefault()
-
-    try {
-      // Post to the api with the current user state as the
-      // request body. So it should look like:
-      // {
-      //    email: amarius@amariusjones.com
-      //    password: 12345678 
-      // }
-      await axios.post('/user/login', {...user})
-
-      // localStorage is a property of the window that allows you to
-      // access a storage object for the document's origin; the stored
-      // data is saved across browser sessions. setItem adds a data item to
-      // the storage object
-      localStorage.setItem('firstLogin', true)
-
-      // redirect the window to the following URL, which in this case is
-      // the home page
-      window.location.href = "/"
-
-    } catch (err) {
-
-      // if there's an error from the server, pop an alert and show
-      // the message there
-      alert(err.response.data.msg)
-      console.log(err)
-
-    }
-  }
 
   return (
     <div className="login-page">
 
-      <form onSubmit={loginSubmit}>
+      <form onSubmit={(e) => loginSubmit(e, user)}>
 
         <h2>Login</h2>
 

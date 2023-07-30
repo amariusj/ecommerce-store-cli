@@ -84,13 +84,49 @@ export default function UserAPI(token) {
         }
     }
 
+    // Run this function when hitting the submit button
+    const loginSubmit = async (e, user) => {
+
+    // Prevent the page from re-loading
+    e.preventDefault()
+
+    try {
+      // Post to the api with the current user state as the
+      // request body. So it should look like:
+      // {
+      //    email: amarius@amariusjones.com
+      //    password: 12345678 
+      // }
+      await axios.post('/user/login', {...user})
+
+      // localStorage is a property of the window that allows you to
+      // access a storage object for the document's origin; the stored
+      // data is saved across browser sessions. setItem adds a data item to
+      // the storage object
+      localStorage.setItem('firstLogin', true)
+
+      // redirect the window to the following URL, which in this case is
+      // the home page
+      window.location.href = "/"
+
+    } catch (err) {
+
+      // if there's an error from the server, pop an alert and show
+      // the message there
+      alert(err.response.data.msg)
+      console.log(err)
+
+    }
+  }
+
     return{
         isLogged: [isLogged, setIsLogged],
         isAdmin: [isAdmin, setIsAdmin],
         cart: [cart, setCart],
         history: [history, setHistory],
         callback: [callback, setCallback],
-        addCart: addCart
+        addCart: addCart,
+        loginSubmit: loginSubmit
     }
 
 }
