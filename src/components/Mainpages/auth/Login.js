@@ -54,6 +54,7 @@ export default function Login() {
       // if there's an error from the server, pop an alert and show
       // the message there
       alert(err.response.data.msg)
+      console.log(err)
 
     }
   }
