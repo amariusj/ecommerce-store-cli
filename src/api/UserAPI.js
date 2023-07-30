@@ -97,7 +97,7 @@ export default function UserAPI(token) {
       //    email: amarius@amariusjones.com
       //    password: 12345678 
       // }
-      await axios.post('https://www.everythingiswater.com/user/login', {...user})
+      await axios.post('/user/login', {...user})
 
       // localStorage is a property of the window that allows you to
       // access a storage object for the document's origin; the stored
