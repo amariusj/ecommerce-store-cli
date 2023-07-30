@@ -35,7 +35,7 @@ const Pages = () => {
             <Route path="/create_product" exact Component={isAdmin ? CreateProduct : NotFound} />
             <Route path="/edit_product/:id" exact element={isAdmin ? <CreateProduct /> : <NotFound />} />
 
-            <Route path="/*" exact Component={NotFound} />
+            <Route path="/not_found" exact Component={NotFound} />
         </Routes>
     )
 }
