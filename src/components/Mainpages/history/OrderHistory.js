@@ -35,6 +35,11 @@ export default function OrderHistory() {
             }
 
             getHistory()
+
+        } else {
+
+            window.location.href = "/"
+
         }
     }, [token, isAdmin, setHistory])
 
