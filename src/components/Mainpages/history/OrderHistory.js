@@ -15,32 +15,38 @@ export default function OrderHistory() {
         if (token) {
             const getHistory = async() => {
 
-                if (isAdmin) {
+                try {
 
-                    const res = await axios.get('/api/payment', {
-                        headers: {Authorization: token}
-                    })
+                    if (isAdmin) {
+
+                        const res = await axios.get('/api/payment', {
+                            headers: {Authorization: token}
+                        })
+        
+                        setHistory(res.data.payments)
     
-                    setHistory(res.data.payments)
-
-                } else {
-
-                    const res = await axios.get('/user/history', {
-                        headers: {Authorization: token}
-                    })
+                    } else {
     
-                    setHistory(res.data)
+                        const res = await axios.get('/user/history', {
+                            headers: {Authorization: token}
+                        })
+        
+                        setHistory(res.data)
+                    }
+
+                } catch (err) {
+
+                    alert(err)
+                    window.location.href = "/"
+
                 }
 
             }
 
             getHistory()
 
-        } else {
-
-            window.location.href = "/"
-
         }
+
     }, [token, isAdmin, setHistory])
 
     return (
